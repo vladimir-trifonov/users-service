@@ -1,8 +1,11 @@
 'use strict'
 
+const bunyan = require('bunyan')
+const log = bunyan.createLogger({name: 'users-service', level: 'debug'})
+
 const handle = (err) => {
   // Log to the console
-  console.error(err)
+  log.error(err)
 }
 
 module.exports = { handle }
