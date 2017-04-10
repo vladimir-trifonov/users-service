@@ -4,7 +4,11 @@
   "description": "API to manage a user persistence layer",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec src/**/*.spec.js",
+    "start": "node src/index.js",
+    "lint": "standard --verbose | snazzy",
+    "node-debug": "DEBUG=express* node src/index.js",
+    "chrome-debug": "node --debug-brk --inspect src/index.js"
   },
   "author": "Vladimir Trifonov",
   "license": "ISC",
@@ -26,6 +30,10 @@
     "eslint-plugin-node": "4.2.2",
     "eslint-plugin-promise": "3.5.0",
     "eslint-plugin-standard": "3.0.1",
-    "standard": "10.0.1"
+    "mocha": "3.2.0",
+    "should": "11.2.1",
+    "snazzy": "7.0.0",
+    "standard": "10.0.1",
+    "supertest": "3.0.0"
   }
 }
