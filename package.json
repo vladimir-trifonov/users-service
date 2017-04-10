@@ -10,8 +10,22 @@
     "node-debug": "DEBUG=express* node src/index.js",
     "chrome-debug": "node --debug-brk --inspect src/index.js"
   },
-  "author": "Vladimir Trifonov",
+  "author": "Vladimir Trifonov <trifonov.dev@gmail.com>",
   "license": "ISC",
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": [
+      "mock"
+    ]
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "docker",
+    "microservice"
+  ],
   "dependencies": {
     "body-parser": "1.17.1",
     "bunyan": "1.8.10",
@@ -35,5 +49,9 @@
     "snazzy": "7.0.0",
     "standard": "10.0.1",
     "supertest": "3.0.0"
-  }
+  },
+  "engines": {
+    "node": ">=7.8.0"
+  },
+  "engineStrict": true
 }
