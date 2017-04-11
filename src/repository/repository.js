@@ -50,6 +50,7 @@ const repository = (db) => {
       let isExists 
 
       try {
+        // Check if there is another user's record with the same email
         isExists = await checkIfUserExistsByEmail(user.email)
       } catch(err) {
         return reject(new Error('repository: ' + err))
@@ -59,6 +60,7 @@ const repository = (db) => {
         return reject(new Error('repository: user exists'))
       }
 
+      // New user
       const payload = {
         email: user.email,
         forename: user.forename,
