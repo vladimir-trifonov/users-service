@@ -48,7 +48,15 @@ Run your app with:
 npm run
 ```
 
-Then open the swagger ui pannel usually at [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
+## Start with docker
+Make sure that you have `/data/db` folder existed on the system, which will be used by the database.
+
+Run the following command to do this:
+```sh
+docker-compose up
+```
+
+Open the swagger ui pannel usually at [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
 
 # Development
 > This section is for individuals developing the Users service app and not intended for end-users.
@@ -65,13 +73,15 @@ Start doing your code changes
 
 Make sure the test suite is still working after code changes
 
-### Start with docker
+Usually you could open [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
+
+## Run tests
 Run the following command to do this:
 ```sh
-docker-compose up
+npm test
 ```
 
-Usually you could open [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
+The code coverage stats should be generated in the `coverage` folder.
 
 ## Contributing 
 
