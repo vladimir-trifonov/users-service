@@ -56,7 +56,7 @@ module.exports = (app, options) => {
         const userId = await repo.createUser(req.body)
         res.status(status.CREATED).json({ _id: userId })
       } catch (err) {
-        if(err.message === 'repository: user exists') {
+        if (err.message === 'repository: user exists') {
           return res.sendStatus(status.CONFLICT)
         }
 

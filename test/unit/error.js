@@ -1,4 +1,6 @@
 /* eslint-env mocha */
+'use strict'
+
 const test = require('assert')
 const sinon = require('sinon')
 const bunyan = require('bunyan')

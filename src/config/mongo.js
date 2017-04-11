@@ -21,7 +21,7 @@ const connect = (options) => {
       }
 
       // Login with specific user and password
-      db.admin().authenticate(options.user, options.pass, (err, result) => {
+      db.admin().authenticate(options.user, options.pass, (err) => {
         if (err) {
           return reject(new Error('db: ' + err))
         }

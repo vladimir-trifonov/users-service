@@ -47,12 +47,12 @@ const repository = (db) => {
   // Create user and return the id of the created user
   const createUser = (user) => {
     return new Promise(async function (resolve, reject) {
-      let isExists 
+      let isExists
 
       try {
         // Check if there is another user's record with the same email
         isExists = await checkIfUserExistsByEmail(user.email)
-      } catch(err) {
+      } catch (err) {
         return reject(new Error('repository: ' + err))
       }
 

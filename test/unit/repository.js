@@ -1,4 +1,6 @@
 /* eslint-env mocha */
+'use strict'
+
 const should = require('should')
 const repository = require('../../src/repository/repository')
 

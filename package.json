@@ -5,8 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "security": "retire --exitwith 0 --outputpath scan-retire.txt && nsp check --output writefile --warn-only",
-    "test:unit": "istanbul cover _mocha --recursive test/unit/**",
-    "test:integration": "DB=users-test mocha --recursive test/integration/**",
+    "test:unit": "istanbul cover node_modules/mocha/bin/_mocha --recursive test/unit/**",
+    "test:integration": "DB=users-test node_modules/mocha/bin/_mocha --recursive test/integration/**",
     "test": "npm run lint && npm run security && npm run test:unit && npm run test:integration",
     "start": "node src/index.js",
     "lint": "standard --verbose | snazzy",

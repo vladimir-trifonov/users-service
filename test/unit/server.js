@@ -1,4 +1,6 @@
 /* eslint-env mocha */
+'use strict'
+
 const server = require('../../src//server/server')
 
 describe('Server', () => {
