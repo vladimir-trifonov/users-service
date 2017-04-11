@@ -4,11 +4,17 @@ API to manage a user persistence layer.
 
 # Table of Contents
 
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [Development](#development)
 - [License](#license)
+
+# Prerequisites
+- Node.js 7.8.0
+- MongoDB
+- Docker
 
 # Installation
 This is node.js app.
