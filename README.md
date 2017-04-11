@@ -61,6 +61,14 @@ Open the swagger ui pannel usually at [here](http://localhost:3000/api-docs) to 
 # Development
 > This section is for individuals developing the Users service app and not intended for end-users.
 
+## Run tests
+Run the following command to do this:
+```sh
+npm test
+```
+
+The code coverage stats should be generated in the `coverage` folder.
+
 ## Sample Development Workflow
 
 Clone this repository
@@ -74,14 +82,6 @@ Start doing your code changes
 Make sure the test suite is still working after code changes
 
 Usually you could open [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
-
-## Run tests
-Run the following command to do this:
-```sh
-npm test
-```
-
-The code coverage stats should be generated in the `coverage` folder.
 
 ## Contributing 
 
