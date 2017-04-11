@@ -5,6 +5,8 @@ const status = require('http-status')
 const Joi = require('joi')
 const Celebrate = require('celebrate')
 
+Joi.objectId = require('joi-objectid')(Joi)
+
 module.exports = (app, options) => {
   const { repo } = options
 
@@ -19,20 +21,26 @@ module.exports = (app, options) => {
   })
 
   // Return user by id
-  app.get('/users/:id', async function (req, res, next) {
-    try {
-      const user = await repo.getUserById(req.params.id)
-
-      if (!user) {
-        // User was not found
-        return res.sendStatus(status.NOT_FOUND)
+  app.get('/users/:id',
+    Celebrate({
+      params: {
+        id: Joi.objectId()
       }
+    }),
+    async function (req, res, next) {
+      try {
+        const user = await repo.getUserById(req.params.id)
 
-      res.status(status.OK).json(user)
-    } catch (err) {
-      next(err)
-    }
-  })
+        if (!user) {
+          // User was not found
+          return res.sendStatus(status.NOT_FOUND)
+        }
+
+        res.status(status.OK).json(user)
+      } catch (err) {
+        next(err)
+      }
+    })
 
   // Create user
   app.post('/users',
@@ -58,7 +66,10 @@ module.exports = (app, options) => {
       body: Joi.object().keys({
         forename: Joi.string(),
         surname: Joi.string()
-      })
+      }),
+      params: {
+        id: Joi.objectId()
+      }
     }),
     async function (req, res, next) {
       try {
@@ -76,18 +87,24 @@ module.exports = (app, options) => {
     })
 
   // Delete user
-  app.delete('/users/:id', async function (req, res, next) {
-    try {
-      const isDeleted = await repo.deleteUser(req.params.id)
-
-      if (!isDeleted) {
-        // User was not found
-        return res.sendStatus(status.NOT_FOUND)
+  app.delete('/users/:id',
+    Celebrate({
+      params: {
+        id: Joi.objectId()
       }
+    }),
+    async function (req, res, next) {
+      try {
+        const isDeleted = await repo.deleteUser(req.params.id)
 
-      res.sendStatus(status.NO_CONTENT)
-    } catch (err) {
-      next(err)
-    }
-  })
+        if (!isDeleted) {
+          // User was not found
+          return res.sendStatus(status.NOT_FOUND)
+        }
+
+        res.sendStatus(status.NO_CONTENT)
+      } catch (err) {
+        next(err)
+      }
+    })
 }
