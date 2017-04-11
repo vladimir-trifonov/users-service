@@ -4,7 +4,7 @@ FROM node:7.8.0
 RUN useradd --user-group --create-home --shell /bin/false usersService && \
     apt-get clean
 
-ENV HOME=/home/usersService
+ENV HOME=/home/app
 
 COPY package.json $HOME/app/
 COPY src/ $HOME/app/src

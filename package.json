@@ -4,7 +4,7 @@
   "description": "API to manage a user persistence layer",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha -R spec test/**",
+    "test": "DB=users-test mocha -R spec test/**",
     "start": "node src/index.js",
     "lint": "standard --verbose | snazzy",
     "node-debug": "DEBUG=users-service node src/index.js",

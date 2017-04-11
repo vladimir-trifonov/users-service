@@ -15,6 +15,11 @@ const connect = (options) => {
         return reject(new Error('db: ' + err))
       }
 
+      if (!options.auth) {
+        // The db is ready
+        return resolve(db)
+      }
+
       // Login with specific user and password
       db.admin().authenticate(options.user, options.pass, (err, result) => {
         if (err) {

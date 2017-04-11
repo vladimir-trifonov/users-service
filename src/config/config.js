@@ -3,9 +3,10 @@
 const dbSettings = {
   // MongoDB config
   db: process.env.DB || 'users',
-  user: process.env.DB_USER || 'users-service',
-  pass: process.env.DB_PASS || 'users-service-pass',
-  server: process.env.DB_HOST || 'localhost:27017'
+  user: process.env.DB_USER,
+  pass: process.env.DB_PASS,
+  server: process.env.DB_SERVER || 'localhost:27017',
+  auth: process.env.DB_AUTH || false
 }
 
 const serverSettings = {
