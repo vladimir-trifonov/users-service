@@ -59,6 +59,8 @@ paths:
             type: object
             items:
               $ref: '#/definitions/UserId'
+        209:
+          description: Conflict. A user with the same email already exist.
         500:
           description: Internal server error
           schema:

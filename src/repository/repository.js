@@ -46,7 +46,19 @@ const repository = (db) => {
 
   // Create user and return the id of the created user
   const createUser = (user) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async function (resolve, reject) {
+      let isExists 
+
+      try {
+        isExists = await checkIfUserExistsByEmail(user.email)
+      } catch(err) {
+        return reject(new Error('repository: ' + err))
+      }
+
+      if (isExists) {
+        return reject(new Error('repository: user exists'))
+      }
+
       const payload = {
         email: user.email,
         forename: user.forename,
@@ -61,6 +73,19 @@ const repository = (db) => {
 
         // Return the user's id
         resolve(r.insertedId.toString())
+      })
+    })
+  }
+
+  // Check if the users with the same email already exists in the db
+  const checkIfUserExistsByEmail = (email) => {
+    return new Promise((resolve, reject) => {
+      collection.findOne({ email }, { _id: 1 }, (err, r) => {
+        if (err) {
+          reject(new Error(`repository: cannot fetch user with email ${email}, err: ${err}`))
+        }
+
+        resolve(!!r)
       })
     })
   }
