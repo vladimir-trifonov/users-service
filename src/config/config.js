@@ -6,7 +6,7 @@ const dbSettings = {
   user: process.env.DB_USER,
   pass: process.env.DB_PASS,
   auth: process.env.DB_AUTH || false,
-  server: process.env.DB_SERVER || 'mongo:27017'
+  server: process.env.DB_SERVER || 'localhost:27017'
 }
 
 const dbTestSettings = {

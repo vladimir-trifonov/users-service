@@ -6,6 +6,8 @@ services:
       - "3000:3000"
     links:
       - mongo
+    environment:
+      - DB_SERVER=mongo:27017
   mongo:
     image: mongo:3.4.3
     volumes:
