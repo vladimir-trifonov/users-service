@@ -8,6 +8,7 @@ services:
       - mongo
     environment:
       - DB_SERVER=mongo:27017
+      - PORT=3000
   mongo:
     image: mongo:3.4.3
     volumes:
