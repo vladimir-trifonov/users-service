@@ -69,8 +69,7 @@ Usually you could open [here](http://localhost:3000/swagger) to play with the ex
 
 ## Contributing 
 
-This project is open source and licensed under the [Apache Public License (version 2)](http://www.apache.org/licenses/LICENSE-2.0).  
-Please consider forking this project to improve, enhance or fix issues. If you feel like the community will benefit from your fork, please open a pull request.
+This project is open source. Please consider forking this project to improve, enhance or fix issues. If you feel like the community will benefit from your fork, please open a pull request.
 
 # License
 
