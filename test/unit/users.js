@@ -79,7 +79,7 @@ describe('Users API', () => {
     request(app)
       .post('/users')
       .send({
-        email: 'user1@mail.com',
+        email: 's.jones@gmail.com',
         forename: 'Sam',
         surname: 'Jones'
       })
@@ -96,7 +96,7 @@ describe('Users API', () => {
     request(app)
       .post('/users')
       .send({
-        email: 'user1@mail.com',
+        email: 's.jones@gmail.com',
         forename: 'Sam',
         surname: 'Jones'
       })
@@ -119,7 +119,7 @@ describe('Users API', () => {
       .expect((res) => {
         res.body.should.be.Object()
         res.body.should.have.property('_id')
-        res.body.should.have.property('email', 'user1@mail.com')
+        res.body.should.have.property('email', 's.jones@gmail.com')
         res.body.should.have.property('forename', 'Sam')
         res.body.should.have.property('surname', 'Jones')
         res.body.should.have.property('created')

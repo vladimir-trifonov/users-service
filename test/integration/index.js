@@ -27,7 +27,7 @@ describe('users-service', () => {
   it('should create user', (done) => {
     api.post('/users')
       .send({
-        email: 'user1@mail.com',
+        email: 's.jones@gmail.com',
         forename: 'Sam',
         surname: 'Jones'
       })
@@ -43,7 +43,7 @@ describe('users-service', () => {
   it('should return 409 for an existed user', (done) => {
     api.post('/users')
       .send({
-        email: 'user1@mail.com',
+        email: 's.jones@gmail.com',
         forename: 'Sam',
         surname: 'Jones'
       })
@@ -64,7 +64,7 @@ describe('users-service', () => {
       .expect((res) => {
         res.body.should.be.Object()
         res.body.should.have.property('_id')
-        res.body.should.have.property('email', 'user1@mail.com')
+        res.body.should.have.property('email', 's.jones@gmail.com')
         res.body.should.have.property('forename', 'Sam')
         res.body.should.have.property('surname', 'Jones')
         res.body.should.have.property('created')
