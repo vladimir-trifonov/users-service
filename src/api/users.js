@@ -68,8 +68,8 @@ module.exports = (app, options) => {
   app.put('/users/:id',
     Celebrate({
       body: Joi.object().keys({
-        forename: Joi.string(),
-        surname: Joi.string()
+        forename: Joi.string().min(1),
+        surname: Joi.string().min(1)
       }),
       params: {
         id: Joi.objectId()
