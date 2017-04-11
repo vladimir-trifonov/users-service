@@ -48,7 +48,7 @@ Run your app with:
 npm run
 ```
 
-Then open the swagger ui pannel usually at [here](http://localhost:3000/swagger) to play with the exposed endpoints.
+Then open the swagger ui pannel usually at [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
 
 # Development
 > This section is for individuals developing the Users service app and not intended for end-users.
@@ -71,7 +71,7 @@ Run the following command to do this:
 docker-compose up
 ```
 
-Usually you could open [here](http://localhost:3000/swagger) to play with the exposed endpoints.
+Usually you could open [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
 
 ## Contributing 
 
