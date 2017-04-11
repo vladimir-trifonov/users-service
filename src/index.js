@@ -20,7 +20,7 @@ process.on('uncaughtException', async function (err) {
   process.exit(1)
 })
 
-async function start() {
+async function start () {
   try {
     const db = await config.db.connect(config.dbSettings)
     const repo = await repository.connect(db)
@@ -31,6 +31,9 @@ async function start() {
       repo
     })
 
+    // Server is ready
+    events.emit('server:ready')
+
     // Disconnect the db on app exit
     app.on('close', repo.disconnect)
   } catch (err) {
@@ -40,3 +43,5 @@ async function start() {
 
 // Start the server
 start()
+
+module.exports = { events }
