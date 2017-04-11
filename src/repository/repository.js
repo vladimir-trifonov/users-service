@@ -74,7 +74,7 @@ const repository = (db) => {
           reject(new Error('repository: cannot update user, err:' + err))
         }
 
-        resolve(!!r.result.ok)
+        resolve(!!r.result.n)
       })
     })
   }
@@ -88,7 +88,7 @@ const repository = (db) => {
           reject(new Error('repository: cannot delete user, err:' + err))
         }
 
-        resolve(!!r.result.ok)
+        resolve(!!r.result.n)
       })
     })
   }
