@@ -5,8 +5,8 @@ const dbSettings = {
   db: process.env.DB || 'users',
   user: process.env.DB_USER,
   pass: process.env.DB_PASS,
-  server: process.env.DB_SERVER || 'mongo:27017',
-  auth: process.env.DB_AUTH || false
+  auth: process.env.DB_AUTH || false,
+  server: process.env.DB_SERVER || 'mongo:27017'
 }
 
 const dbTestSettings = {
