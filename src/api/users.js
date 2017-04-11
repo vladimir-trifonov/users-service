@@ -46,7 +46,7 @@ module.exports = (app, options) => {
   app.post('/users',
     Celebrate({
       body: Joi.object().keys({
-        email: Joi.string().required(),
+        email: Joi.string().required().email(),
         forename: Joi.string().required(),
         surname: Joi.string().required()
       })
