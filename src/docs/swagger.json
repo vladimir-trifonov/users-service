@@ -75,7 +75,7 @@
     "/users/{id}" : {
       "get" : {
         "tags" : [ "Users" ],
-        "summary" : "User",
+        "summary" : "Users",
         "description" : "This endpoint returns information about a user. \nThe response includes the email and other details, \nlike forename and surname.\n",
         "operationId" : "GetUserById",
         "produces" : [ "application/json" ],
@@ -109,7 +109,7 @@
       },
       "put" : {
         "tags" : [ "Users" ],
-        "summary" : "User",
+        "summary" : "Users",
         "description" : "This endpoint updates the user's information. \nThe request body should includes forename and/or surname.\n",
         "operationId" : "UpdateUserById",
         "produces" : [ "application/json" ],
@@ -145,7 +145,7 @@
       },
       "delete" : {
         "tags" : [ "Users" ],
-        "summary" : "User",
+        "summary" : "Users",
         "description" : "This endpoint deletes a user.\n",
         "operationId" : "DeleteUserById",
         "produces" : [ "application/json" ],

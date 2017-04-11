@@ -67,7 +67,7 @@ paths:
             $ref: '#/definitions/Error'
   /users/{id}:
     get:
-      summary: User
+      summary: Users
       operationId: GetUserById
       description: |
         This endpoint returns information about a user. 
@@ -98,7 +98,7 @@ paths:
             schema:
               $ref: '#/definitions/Error'
     put:
-      summary: User
+      summary: Users
       operationId: UpdateUserById
       description: |
         This endpoint updates the user's information. 
@@ -129,7 +129,7 @@ paths:
             schema:
               $ref: '#/definitions/Error'
     delete:
-      summary: User
+      summary: Users
       operationId: DeleteUserById
       description: |
         This endpoint deletes a user.

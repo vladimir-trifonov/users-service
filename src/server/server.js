@@ -28,7 +28,7 @@ const start = (options) => {
     // This acts as living documentation for the API hosted from within the app
     // By default the Swagger Explorer bar is hidden, to display it pass true as the second parameter to the setup function
     const showExplorer = true
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, showExplorer))
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, showExplorer, { validatorUrl: null }))
 
     // Parse application/x-www-form-urlencoded
     app.use(bodyParser.urlencoded({ extended: false }))
