@@ -32,7 +32,7 @@ async function start () {
     })
 
     // Server is ready
-    events.emit('server:ready', { db })
+    events.emit('server:ready', { app, db })
 
     // Disconnect the db on app exit
     app.on('close', repo.disconnect)

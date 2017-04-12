@@ -31,6 +31,7 @@ describe('Mongo Connection', () => {
 
         done()
       })
+      .catch(done)
   })
 
   it('should return error', (done) => {
@@ -109,5 +110,6 @@ describe('Mongo Connection', () => {
 
         done()
       })
+      .catch(done)
   })
 })

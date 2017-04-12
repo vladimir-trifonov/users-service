@@ -34,7 +34,7 @@ const repository = (db) => {
 
       const sendUser = (err, user) => {
         if (err) {
-          reject(new Error(`repository: cannot fetch user with id ${id}, err: ${err}`))
+          return reject(new Error(`repository: cannot fetch user with id ${id}, err: ${err}`))
         }
 
         resolve(user)
@@ -70,7 +70,7 @@ const repository = (db) => {
 
       collection.insertOne(payload, (err, r) => {
         if (err) {
-          reject(new Error('repository: cannot create user, err:' + err))
+          return reject(new Error('repository: cannot create user, err:' + err))
         }
 
         // Return the user's id
@@ -84,7 +84,7 @@ const repository = (db) => {
     return new Promise((resolve, reject) => {
       collection.findOne({ email }, { _id: 1 }, (err, r) => {
         if (err) {
-          reject(new Error(`repository: cannot fetch user with email ${email}, err: ${err}`))
+          return reject(new Error(`repository: cannot fetch user with email ${email}, err: ${err}`))
         }
 
         resolve(!!r)
@@ -98,7 +98,7 @@ const repository = (db) => {
     return new Promise((resolve, reject) => {
       collection.updateOne({ _id: new ObjectID(id) }, { $set: user }, (err, r) => {
         if (err) {
-          reject(new Error('repository: cannot update user, err:' + err))
+          return reject(new Error('repository: cannot update user, err:' + err))
         }
 
         resolve(!!r.result.n)
@@ -112,7 +112,7 @@ const repository = (db) => {
     return new Promise((resolve, reject) => {
       collection.deleteOne({ _id: new ObjectID(id) }, (err, r) => {
         if (err) {
-          reject(new Error('repository: cannot delete user, err:' + err))
+          return reject(new Error('repository: cannot delete user, err:' + err))
         }
 
         resolve(!!r.result.n)
