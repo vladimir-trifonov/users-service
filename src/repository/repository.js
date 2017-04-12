@@ -1,3 +1,8 @@
+/*
+ * Repository
+ * Expose methods which operates with data, e.g. create user
+ * The current implementation uses mongo db as data layer
+ */
 'use strict'
 
 const ObjectID = require('mongodb').ObjectID

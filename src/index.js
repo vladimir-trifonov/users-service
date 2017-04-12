@@ -1,3 +1,6 @@
+/*
+ * Users service app
+ */
 'use strict'
 
 const { EventEmitter } = require('events')

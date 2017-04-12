@@ -1,3 +1,7 @@
+/*
+ * Users API
+ * Expose express REST endpoints
+ */
 'use strict'
 
 // HTTP status codes

@@ -1,3 +1,7 @@
+/*
+ * Server
+ * Express server init settings and apis initialization
+ */
 'use strict'
 
 const express = require('express')

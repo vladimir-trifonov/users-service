@@ -12,13 +12,17 @@ describe('Users API', () => {
   let testUsers = []
   let store = {}
 
+  // Repo logic mocked - immutable operations only
   let testRepo = {
+    // Returns users collection
     getAllUsers () {
       return Promise.resolve(testUsers)
     },
+    // Return user by id from the collection
     getUserById (id) {
       return Promise.resolve(testUsers.find(user => user._id === id))
     },
+    // Adds user to the collection
     createUser (user) {
       const index = testUsers.findIndex(user => user.email === user.email)
 
@@ -34,6 +38,7 @@ describe('Users API', () => {
       testUsers = [...testUsers, newUser]
       return Promise.resolve(_id)
     },
+    // Updates user in the collection
     updateUser (id, user) {
       const index = testUsers.findIndex(user => user._id === id)
 
@@ -49,6 +54,7 @@ describe('Users API', () => {
       ]
       return Promise.resolve(true)
     },
+    // Removes user from the collection
     deleteUser (id) {
       const index = testUsers.findIndex(user => user._id === id)
 

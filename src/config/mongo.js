@@ -1,3 +1,8 @@
+/*
+ * MongoDB
+ * Connects the app to the mongoDB database,
+ * which is used for data persistence
+ */
 'use strict'
 
 const MongoClient = require('mongodb')

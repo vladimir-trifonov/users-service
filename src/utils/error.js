@@ -1,3 +1,7 @@
+/*
+ * Error handling
+ * This error handler logs errors
+ */
 'use strict'
 
 const bunyan = require('bunyan')

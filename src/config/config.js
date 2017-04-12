@@ -1,3 +1,7 @@
+/*
+ * Config
+ * App config settings
+ */
 'use strict'
 
 const dbSettings = {
