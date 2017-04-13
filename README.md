@@ -12,8 +12,8 @@ API to manage a user persistence layer.
 - [License](#license)
 
 # Prerequisites
-- Node.js 7.8.0
-- MongoDB
+- Node.js >= 7.8.0
+- MongoDB >= 3.4.3
 - Docker
 
 # Installation
@@ -45,21 +45,35 @@ If you want to log in mongo with specific user you can specify the following set
 # Usage
 Run your app with:
 ```sh 
-npm run
+npm start
 ```
 
 ## Start with docker
-Make sure that you have `/data/db` folder existed on the system, which will be used by the database.
-
 Run the following command to do this:
 ```sh
 docker-compose up
 ```
 
+Make sure that you have `/data/db` folder existed on the system, which will be used by the database.
+
 Open the swagger ui pannel usually at [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
 
 # Development
 > This section is for individuals developing the Users service app and not intended for end-users.
+
+## Sample Development Workflow
+
+Clone this repository
+
+From the root of your project run `npm install`
+
+Run `npm test` to see unit test suite test results
+
+Start doing your code changes
+
+Make sure the test suite is still working after code changes
+
+Usually you could open [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
 
 ## Run tests
 Run the following command to do this:
@@ -68,20 +82,6 @@ npm test
 ```
 
 The code coverage stats should be generated in the `coverage` folder.
-
-## Sample Development Workflow
-
-Clone this repository
-
-From the root of your project run `npm install`
-
-Run `npm test` to see unite test suite test results
-
-Start doing your code changes
-
-Make sure the test suite is still working after code changes
-
-Usually you could open [here](http://localhost:3000/api-docs) to play with the exposed endpoints.
 
 ## Contributing 
 
